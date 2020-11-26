@@ -1,0 +1,32 @@
+header {
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+}
+.navbar {
+  height: 70px;
+  max-width: 1170px;
+  margin: 0 auto
+}
+.nav-item {
+  margin-right: 30px;
+  font-size: 15px;
+  line-height: 18px;
+  color: #34495E;
+}
+.nav-item:last-child {
+  margin-right: 0;
+}
+.nav-item-button {
+  background-color: #8E44AD;
+  padding: 9px 25px;
+  border-radius: 20px;
+  font-size: 15px;
+  line-height: 18px;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+}
