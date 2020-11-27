@@ -13,6 +13,7 @@ import { UserComponent } from './components/user/user.component';
 import { CreateModalComponent } from './components/modals/create-modal/create-modal.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { EditModalComponent } from './components/modals/edit-modal/edit-modal.component';
+import { DeleteModalComponent } from './components/modals/delete-modal/delete-modal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditModalComponent } from './components/modals/edit-modal/edit-modal.co
     UsersComponent,
     UserComponent,
     CreateModalComponent,
-    EditModalComponent
+    EditModalComponent,
+    DeleteModalComponent
   ],
   imports: [
     BrowserModule,

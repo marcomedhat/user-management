@@ -28,7 +28,9 @@
               <button class="secondary edit" [ngClass]="{'selected': selectedUser == user}" (click)="openEditModal(user.id);$event.stopPropagation()">
                 <img src="../../../assets/images/pen.svg" alt="Pen Icon">
               </button>
-              <button class="secondary trash" [ngClass]="{'selected': selectedUser == user}"><img src="../../../assets/images/trash.svg" alt="Trash Icon"></button>
+              <button class="secondary trash" [ngClass]="{'selected': selectedUser == user}" (click)="openDeleteModal(user.id);$event.stopPropagation()">
+                <img src="../../../assets/images/trash.svg" alt="Trash Icon">
+              </button>
               <span>></span>
             </div>
           </div>
@@ -37,6 +39,11 @@
       <div class="user-details" *ngIf="detailsOpen === true">
         <app-user></app-user>
       </div>
+    </div>
+
+    <div class="load-more" *ngIf="!users">
+        <img src="../../../assets/images/spinner.svg" alt="Spinner Icon">
+        <span>Loading more users</span>
     </div>
   </div>
 </div>

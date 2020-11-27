@@ -1,0 +1,13 @@
+<div class="delete-modal" *ngIf="user">
+  <p class="message">Are you sure you want to delete</p>
+  <h4 class="name">{{user.data.first_name}} {{user.data.last_name}}</h4>
+
+  <div class="delete-actions">
+    <button type="button" class="modal-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      No
+    </button>
+    <button class="modal-submit" type="button" (click)="onDelete(id)">
+      Yes
+    </button>
+  </div>
+</div>

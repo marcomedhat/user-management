@@ -3,6 +3,7 @@ import { UsersService } from '../users/users.service';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EditModalComponent } from '../modals/edit-modal/edit-modal.component';
+import { DeleteModalComponent } from '../modals/delete-modal/delete-modal.component';
 
 
 @Component({
@@ -29,6 +30,11 @@ export class UserComponent implements OnInit {
   openEditModal(id: number) {
     this.usersService.fetchSingleUser(id);
     this.modalService.open(EditModalComponent);
+  }
+
+  openDeleteModal(id: number) {
+    this.usersService.fetchSingleUser(id);
+    this.modalService.open(DeleteModalComponent);
   }
 
 }

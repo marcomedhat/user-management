@@ -7,7 +7,9 @@
       <button class="edit" (click)="openEditModal(user.data.id);$event.stopPropagation()">
         <img src="../../../assets/images/pen-white.svg" alt="Pen Icon">  Edit
       </button>
-      <button class="trash"><img src="../../../assets/images/trash.svg" alt="Trash Icon">  Delete</button>
+      <button class="trash" (click)="openDeleteModal(user.data.id);$event.stopPropagation()">
+        <img src="../../../assets/images/trash.svg" alt="Trash Icon">  Delete
+      </button>
     </div>
   </div>
 </div>

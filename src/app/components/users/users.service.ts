@@ -6,10 +6,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsersService {
+  public users;
 
+  public usersData = new BehaviorSubject(null);
   public userData = new BehaviorSubject(null);
   public detailsOpen = new BehaviorSubject(false);
   public selectedUser = new BehaviorSubject(null);
+  public deletedUser = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) {
   }
@@ -18,7 +21,10 @@ export class UsersService {
     return this.http
       .get(
         `https://reqres.in/api/users?page=${page}`
-      );
+      ).subscribe(users => {
+        this.users = users;
+        this.usersData.next(this.users);
+      });
   }
 
   fetchSingleUser(id: number) {
@@ -46,6 +52,16 @@ export class UsersService {
     this.http
       .put(`https://reqres.in/api/users/${id}`, {name, job})
       .subscribe(user => console.log('updated-user', user));
+  }
+
+  onDeleteUser(id) {
+    this.http
+      .delete(`https://reqres.in/api/users/${id}`);
+    this.users.data = this.users.data.filter(user => user.id !== id);
+    this.usersData.next(this.users);
+    this.selectedUser.next(null);
+    this.userData.next(null);
+    this.detailsOpen.next(false);
   }
 
 }

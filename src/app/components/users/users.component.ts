@@ -4,6 +4,7 @@ import { UsersService } from './users.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CreateModalComponent } from '../modals/create-modal/create-modal.component';
 import { EditModalComponent } from '../modals/edit-modal/edit-modal.component';
+import { DeleteModalComponent } from '../modals/delete-modal/delete-modal.component';
 
 @Component({
   selector: 'app-users',
@@ -16,6 +17,7 @@ export class UsersComponent implements OnInit {
   detailsOpen = false;
 
   constructor(private usersService: UsersService, private modalService: NgbModal) {
+    this.usersService.usersData.subscribe(users => this.users = users);
     this.usersService.detailsOpen.subscribe(val => {
       this.detailsOpen = val;
     });
@@ -25,9 +27,7 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.usersService.fetchUsers().subscribe(users => {
-      this.users = users;
-    });
+    this.usersService.fetchUsers();
   }
 
   openUserDetails(id: number, user) {
@@ -43,6 +43,11 @@ export class UsersComponent implements OnInit {
   openEditModal(id: number) {
     this.usersService.fetchSingleUser(id);
     this.modalService.open(EditModalComponent);
+  }
+
+  openDeleteModal(id: number) {
+    this.usersService.fetchSingleUser(id);
+    this.modalService.open(DeleteModalComponent);
   }
 
 }
