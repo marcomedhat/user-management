@@ -25,7 +25,9 @@
               <h2 class="user-name">{{user.first_name}} {{user.last_name}}</h2>
             </div>
             <div class="actions-section">
-              <button class="secondary edit" [ngClass]="{'selected': selectedUser == user}"><img src="../../../assets/images/pen.svg" alt="Pen Icon"></button>
+              <button class="secondary edit" [ngClass]="{'selected': selectedUser == user}" (click)="openEditModal(user.id);$event.stopPropagation()">
+                <img src="../../../assets/images/pen.svg" alt="Pen Icon">
+              </button>
               <button class="secondary trash" [ngClass]="{'selected': selectedUser == user}"><img src="../../../assets/images/trash.svg" alt="Trash Icon"></button>
               <span>></span>
             </div>
@@ -36,6 +38,5 @@
         <app-user></app-user>
       </div>
     </div>
-
   </div>
 </div>

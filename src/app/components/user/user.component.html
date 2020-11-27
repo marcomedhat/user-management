@@ -4,7 +4,9 @@
     <img src={{user.data.avatar}} alt="User Avatar" class="user-avatar">
     <h2 class="user-name">{{user.data.first_name}} {{user.data.last_name}}</h2>
     <div class="user-actions">
-      <button class="edit"><img src="../../../assets/images/pen-white.svg" alt="Pen Icon">  Edit</button>
+      <button class="edit" (click)="openEditModal(user.data.id);$event.stopPropagation()">
+        <img src="../../../assets/images/pen-white.svg" alt="Pen Icon">  Edit
+      </button>
       <button class="trash"><img src="../../../assets/images/trash.svg" alt="Trash Icon">  Delete</button>
     </div>
   </div>

@@ -3,6 +3,7 @@ import { UsersService } from './users.service';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CreateModalComponent } from '../modals/create-modal/create-modal.component';
+import { EditModalComponent } from '../modals/edit-modal/edit-modal.component';
 
 @Component({
   selector: 'app-users',
@@ -37,6 +38,11 @@ export class UsersComponent implements OnInit {
 
   openCreateModal() {
     this.modalService.open(CreateModalComponent);
+  }
+
+  openEditModal(id: number) {
+    this.usersService.fetchSingleUser(id);
+    this.modalService.open(EditModalComponent);
   }
 
 }

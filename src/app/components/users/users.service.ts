@@ -42,4 +42,10 @@ export class UsersService {
       .subscribe(user => console.log('new-user', user));
   }
 
+  onEditUser(id, name, job) {
+    this.http
+      .put(`https://reqres.in/api/users/${id}`, {name, job})
+      .subscribe(user => console.log('updated-user', user));
+  }
+
 }

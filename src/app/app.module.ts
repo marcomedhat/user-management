@@ -12,6 +12,7 @@ import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/user/user.component';
 import { CreateModalComponent } from './components/modals/create-modal/create-modal.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { EditModalComponent } from './components/modals/edit-modal/edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     UsersComponent,
     UserComponent,
-    CreateModalComponent
+    CreateModalComponent,
+    EditModalComponent
   ],
   imports: [
     BrowserModule,
