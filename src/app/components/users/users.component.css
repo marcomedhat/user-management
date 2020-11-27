@@ -48,16 +48,18 @@
 }
 .main-container {
   max-width: 1170px;
-  margin: 30px auto auto;
+  margin: 30px auto;
   border-radius: 10px;
   background-color: #FFFFFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+.main-list {
   display: flex;
 }
 .users-list {
   padding: 15px;
   width: 100%;
-  min-width: 78%;
+  min-width: 75%;
 }
 .users-list.selected {
   padding-right: 0;
@@ -147,5 +149,8 @@ button.selected {
 }
 
 .user-details {
-  min-width: 22%;
+  min-width: 25%;
+  background-color: #F5F5F5;
+  box-shadow: -2px 0 4px 0 rgba(0,0,0,0.2);
 }
+

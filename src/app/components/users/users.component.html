@@ -1,17 +1,18 @@
 <div class="users-component">
-    <div class="header">
-      <div class="header-content">
-        <div class="title-section">
-          <p class="breadcrumb-text">Home / Dashboard</p>
-          <h3 class="title">Users List</h3>
-        </div>
-        <div class="add-new-section">
-          <button class="add-new"><span>+</span> New User</button>
-        </div>
+  <div class="header">
+    <div class="header-content">
+      <div class="title-section">
+        <p class="breadcrumb-text">Home / Dashboard</p>
+        <h3 class="title">Users List</h3>
+      </div>
+      <div class="add-new-section">
+        <button class="add-new"><span>+</span> New User</button>
       </div>
     </div>
+  </div>
 
-    <div class="main-container">
+  <div class="main-container">
+    <div class="main-list">
       <div class="users-list" *ngIf="users" [ngClass]="{'selected': selectedUser !== null}">
         <div class="user-list-header">
           <p>User</p>
@@ -28,11 +29,12 @@
               <button class="secondary trash" [ngClass]="{'selected': selectedUser == user}"><img src="../../../assets/images/trash.svg" alt="Trash Icon"></button>
               <span>></span>
             </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="user-details" *ngIf="selectedUser !== null">
-
+      <div class="user-details" *ngIf="detailsOpen === true">
+        <app-user></app-user>
+      </div>
     </div>
   </div>
 </div>

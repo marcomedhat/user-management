@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  public users = {
-  };
-
-  public usersData = new BehaviorSubject(null);
+  public userData = new BehaviorSubject(null);
+  public detailsOpen = new BehaviorSubject(false);
+  public selectedUser = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) {
   }
@@ -23,22 +21,19 @@ export class UsersService {
       );
   }
 
+  fetchSingleUser(id: number) {
+    return this.http
+      .get(
+        `https://reqres.in/api/users/${id}`
+      )
+      .subscribe(user => {
+        this.userData.next(user);
+      });
+  }
 
-  // onDeleteMessage(id: number) {
-  //   const idx = this.messages.findIndex(x => x.messageId == id);
-  //   this.messages.splice(idx, 1);
-  //   this.myMessages.next(this.messages);
-  // }
-
-  // getSingleMessage(id) {
-  //   // const idx = this.messages.findIndex(x => x.messageId == id);
-  //   // this.message = this.messages[idx];
-  //   return this.message;
-  // }
-
-  // onAddMessage(data) {
-  //   this.messages.unshift(data);
-  //   this.myMessages.next(this.messages);
-  // }
+  onCloseDetails() {
+    this.detailsOpen.next(false);
+    this.selectedUser.next(null);
+  }
 
 }

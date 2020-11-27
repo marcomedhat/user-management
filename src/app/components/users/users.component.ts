@@ -9,21 +9,28 @@ import { UsersService } from './users.service';
 export class UsersComponent implements OnInit {
   users;
   selectedUser = null;
+  detailsOpen = false;
 
 
   constructor(private usersService: UsersService) {
+    this.usersService.detailsOpen.subscribe(val => {
+      this.detailsOpen = val;
+    });
+    this.usersService.selectedUser.subscribe(val => {
+      this.selectedUser = val;
+    });
   }
 
   ngOnInit(): void {
     this.usersService.fetchUsers().subscribe(users => {
       this.users = users;
-      console.log(users);
     });
   }
 
   openUserDetails(id: number, user) {
     this.selectedUser = user;
-    console.log(id);
+    this.detailsOpen = true;
+    this.usersService.fetchSingleUser(id);
   }
 
 }

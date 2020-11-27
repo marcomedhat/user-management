@@ -1,0 +1,67 @@
+.user-details-card {
+  position: relative;
+}
+span.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #8E44AD;
+  opacity: 0.7;
+}
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+img.user-avatar {
+  width: 127px;
+  height: 127px;
+  margin-top: 54px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  border: 1px solid #FFFFFF;
+}
+h2.user-name {
+  color: #34495E;
+  font-size: 25px;
+  line-height: 29px;
+  margin-bottom: 25px;
+}
+.user-actions {
+  display: flex;
+  justify-content: center;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 110px;
+}
+button img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+button.edit {
+  border-radius: 20px;
+  background-color: #8E44AD;
+  border: 1px solid #8E44AD;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  margin-right: 12px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 18px;
+  /* padding: 9px 32px; */
+}
+button.trash {
+  border: 1px solid #8E44AD;
+  border-radius: 20px;
+  background-color: #F5F5F5;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  color: #8E44AD;
+  font-size: 15px;
+  line-height: 18px;
+  /* padding: 9px 32px; */
+}
