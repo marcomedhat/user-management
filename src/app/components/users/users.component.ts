@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users.service';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CreateModalComponent } from '../modals/create-modal/create-modal.component';
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -11,8 +14,7 @@ export class UsersComponent implements OnInit {
   selectedUser = null;
   detailsOpen = false;
 
-
-  constructor(private usersService: UsersService) {
+  constructor(private usersService: UsersService, private modalService: NgbModal) {
     this.usersService.detailsOpen.subscribe(val => {
       this.detailsOpen = val;
     });
@@ -31,6 +33,10 @@ export class UsersComponent implements OnInit {
     this.selectedUser = user;
     this.detailsOpen = true;
     this.usersService.fetchSingleUser(id);
+  }
+
+  openCreateModal() {
+    this.modalService.open(CreateModalComponent);
   }
 
 }

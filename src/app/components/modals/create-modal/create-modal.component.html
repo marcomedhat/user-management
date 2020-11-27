@@ -1,0 +1,25 @@
+<div class="create-new-modal">
+  <div class="img-section">
+    <img src="../../../../assets/images/user.svg" alt="User Icon">
+  </div>
+
+  <form #addNewForm="ngForm" (ngSubmit)="onSubmit(addNewForm)">
+    <div class="form-group">
+      <label for="InputUserName">Name</label>
+      <input type="text" class="form-control" id="InputUserName" placeholder="Name…" name="username" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="InputUserJob">Job title</label>
+      <input type="text" class="form-control" id="InputUserJob" placeholder="Job title…" name="jobtitle" ngModel>
+    </div>
+
+    <div class="add-new-footer">
+      <button type="button" class="modal-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        Cancel
+      </button>
+      <button class="modal-submit" type="submit">
+        Add
+      </button>
+    </div>
+  </form>
+</div>

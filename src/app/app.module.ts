@@ -10,6 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/user/user.component';
+import { CreateModalComponent } from './components/modals/create-modal/create-modal.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import { UserComponent } from './components/user/user.component';
     HeaderComponent,
     LoginComponent,
     UsersComponent,
-    UserComponent
+    UserComponent,
+    CreateModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

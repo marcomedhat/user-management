@@ -36,4 +36,10 @@ export class UsersService {
     this.selectedUser.next(null);
   }
 
+  onAddNewUser(name, job) {
+    this.http
+      .post('https://reqres.in/api/users/', {name, job})
+      .subscribe(user => console.log('new-user', user));
+  }
+
 }
