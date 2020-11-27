@@ -1,0 +1,38 @@
+<div class="users-component">
+    <div class="header">
+      <div class="header-content">
+        <div class="title-section">
+          <p class="breadcrumb-text">Home / Dashboard</p>
+          <h3 class="title">Users List</h3>
+        </div>
+        <div class="add-new-section">
+          <button class="add-new"><span>+</span> New User</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="users-list" *ngIf="users" [ngClass]="{'selected': selectedUser !== null}">
+        <div class="user-list-header">
+          <p>User</p>
+          <p class="actions">Actions</p>
+        </div>
+        <div class="user-item" *ngFor="let user of users.data" (click)="openUserDetails(user.id, user)" [ngClass]="{'selected': selectedUser == user}">
+          <div class="user-item-details">
+            <div class="user-name-section">
+              <img src={{user.avatar}} class="user-avatar">
+              <h2 class="user-name">{{user.first_name}} {{user.last_name}}</h2>
+            </div>
+            <div class="actions-section">
+              <button class="secondary edit" [ngClass]="{'selected': selectedUser == user}"><img src="../../../assets/images/pen.svg" alt="Pen Icon"></button>
+              <button class="secondary trash" [ngClass]="{'selected': selectedUser == user}"><img src="../../../assets/images/trash.svg" alt="Trash Icon"></button>
+              <span>></span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="user-details" *ngIf="selectedUser !== null">
+
+    </div>
+  </div>
+</div>
