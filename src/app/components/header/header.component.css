@@ -6,7 +6,9 @@ header {
 .navbar {
   height: 70px;
   max-width: 1170px;
-  margin: 0 auto
+  margin: 0 auto;
+  padding-right: 0;
+  padding-left: 0;
 }
 .nav-item {
   margin-right: 30px;
