@@ -31,7 +31,8 @@
               <button class="secondary trash" [ngClass]="{'selected': selectedUser == user}" (click)="openDeleteModal(user.id);$event.stopPropagation()">
                 <img src="../../../assets/images/trash.svg" alt="Trash Icon">
               </button>
-              <span>></span>
+              <img src="../../../assets/images/arrow-right-purple.png" alt="Right Arrow" *ngIf="selectedUser != user" class="right-arrow">
+              <img src="../../../assets/images/arrow-right-white.png" alt="Right Arrow" *ngIf="selectedUser == user" class="right-arrow">
             </div>
           </div>
         </div>
