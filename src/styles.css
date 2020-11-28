@@ -13,3 +13,10 @@ img {
   left: 50%;
   transform: translate(-50%, -50%) !important;
 }
+button:focus {
+  outline: none;
+}
+.row, .col-md-12 {
+  padding: 0;
+  margin: 0;
+}
