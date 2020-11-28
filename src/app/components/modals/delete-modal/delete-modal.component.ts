@@ -14,9 +14,11 @@ export class DeleteModalComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal, private usersService: UsersService) {
     this.usersService.userData.subscribe(user => {
-      this.user = user;
-      this.name = user.data.first_name + ' ' + user.data.last_name;
-      this.id = user.data.id;
+      if (user) {
+        this.user = user;
+        this.name = user.data.first_name + ' ' + user.data.last_name;
+        this.id = user.data.id;
+      }
     });
   }
 
